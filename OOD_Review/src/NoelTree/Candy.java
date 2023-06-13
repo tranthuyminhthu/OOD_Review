@@ -2,21 +2,26 @@ package NoelTree;
 
 public class Candy extends Ornament {
 
-    Item item;
+	public Candy(Decorator decorator) {
+		super(decorator);
+		// TODO Auto-generated constructor stub
+		id = 1;
+		name = "candy";
+		price = 2;
+		description = "Candy";
 
-    public Candy(int id, String name, double price, String description, Item item) {
-        super(id, name, price, description);
-        this.item = item;
-    }
+	}
 
-    @Override
-    public String getDescription() {
-       return this.item.getDescription() + " + " + description;
-    }
+	@Override
+	public String show() {
+		// TODO Auto-generated method stub
+		return decorator.show() + "+" + this.description;
+	}
 
-    @Override
-    public double cost() {
-      return this.getPrice() + this.item.cost();
-    }
-    
+	@Override
+	public double cost() {
+		// TODO Auto-generated method stub
+		return decorator.cost() + this.price;
+	}
+
 }

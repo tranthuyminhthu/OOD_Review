@@ -2,21 +2,27 @@ package NoelTree;
 
 public class Garland extends Ornament {
 
-    Item item;
+	public Garland(Decorator decorator) {
+		super(decorator);
 
-    public Garland(int id, String name, double price, String description, Item item) {
-        super(id, name, price, description);
-        this.item = item;
-    }
+		id = 3;
+		name = "garland";
+		description = "Garland";
+		price = 5;
 
-    @Override
-    public String getDescription() {
-       return this.item.getDescription() + " + " + description;
-    }
+		// TODO Auto-generated constructor stub
+	}
 
-    @Override
-    public double cost() {
-      return this.getPrice() + this.item.cost();
-    }
-    
+	@Override
+	public String show() {
+		// TODO Auto-generated method stub
+		return decorator.show() + "+" + this.description;
+	}
+
+	@Override
+	public double cost() {
+		// TODO Auto-generated method stub
+		return decorator.cost() + this.price;
+	}
+
 }

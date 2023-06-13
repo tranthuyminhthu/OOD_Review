@@ -1,20 +1,26 @@
 package NoelTree;
 
 public class Bubble extends Ornament {
-      Item item;
 
-    public Bubble(int id, String name, double price, String description, Item item) {
-        super(id, name, price, description);
-        this.item = item;
-    }
+	public Bubble(Decorator decorator) {
+		super(decorator);
+		id = 2;
+		name = "bubble";
+		price = 3;
+		description = "Bubble";
+		// TODO Auto-generated constructor stub
+	}
 
-    @Override
-    public String getDescription() {
-       return this.item.getDescription() + " + " + description;
-    }
+	@Override
+	public String show() {
+		// TODO Auto-generated method stub
+		return decorator.show() + "+" + this.description;
+	}
 
-    @Override
-    public double cost() {
-      return this.getPrice() + this.item.cost();
-    }
+	@Override
+	public double cost() {
+		// TODO Auto-generated method stub
+		return decorator.cost() + this.price;
+	}
+
 }
